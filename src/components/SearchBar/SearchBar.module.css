@@ -1,5 +1,6 @@
 .header {
   background-color: rgb(203, 200, 188);
+  box-shadow: 3px 3px 15px rgb(63, 60, 60);
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   height: 70px;
@@ -11,7 +12,7 @@
 
 .form {
   display: flex;
-  gap: 5px;
+  gap: 10px;
 }
 
 .input {
@@ -20,13 +21,14 @@
   border-radius: 10px;
   padding-left: 10px;
   border: 1px solid rgb(230, 86, 20);
+  box-shadow: 3px 3px 15px rgb(63, 60, 60);
   outline: none;
   font-size: 16px;
-  transition: box-shadow 250ms linear;
+  transition: background-color 250ms linear;
 
   &:hover,
   &:focus {
-    box-shadow: inset 2px 2px 5px;
+    background-color: #ecf8fe;
   }
 }
 
@@ -36,6 +38,7 @@
   height: 40px;
   border-radius: 10px;
   background-color: rgb(230, 86, 20);
+  box-shadow: 3px 3px 15px rgb(63, 60, 60);
   border: none;
   color: #fff;
   outline: none;

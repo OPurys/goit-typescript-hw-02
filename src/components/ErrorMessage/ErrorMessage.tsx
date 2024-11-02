@@ -3,7 +3,11 @@ import css from './ErrorMessage.module.css';
 const ErrorMessage = () => {
   return (
     <div className={css.wrapper}>
-      <p>Not Found</p>
+      <img
+        className={css.image}
+        src="https://landingi.com/wp-content/uploads/2022/03/en_4041.png"
+        alt="NotFound404"
+      />
     </div>
   );
 };

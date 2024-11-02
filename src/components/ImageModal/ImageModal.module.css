@@ -14,16 +14,14 @@
 .modal {
   position: relative;
   background: #dae9f3;
-  padding: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
   outline: none;
+  border: 3px solid gray;
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 90vw;
   max-height: 80vh;
-  width: auto;
-  height: auto;
   overflow: hidden;
 }
 
@@ -34,10 +32,4 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-}
-
-.image {
-  max-width: 100%;
-  max-height: calc(100% - 20px);
-  object-fit: cover;
 }

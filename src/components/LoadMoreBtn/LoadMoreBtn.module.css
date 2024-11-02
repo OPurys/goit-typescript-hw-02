@@ -6,6 +6,7 @@
   height: 50px;
   border-radius: 10px;
   background-color: rgb(230, 86, 20);
+  box-shadow: 3px 3px 15px rgb(63, 60, 60);
   border: none;
   color: #fff;
   outline: none;

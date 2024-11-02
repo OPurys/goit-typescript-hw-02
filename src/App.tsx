@@ -5,17 +5,18 @@ import ImageModal from './components/ImageModal/ImageModal';
 import Loader from './components/Loader/Loader';
 import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
 import SearchBar from './components/SearchBar/SearchBar';
-import searchImages from './services/api.js';
+import searchImages from './services/api';
 import { Toaster } from 'react-hot-toast';
+import { Image } from './types';
 
 const App = () => {
-  const [images, setImages] = useState([]);
-  const [query, setQuery] = useState('');
-  const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [totalPage, setTotalPages] = useState(0);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [images, setImages] = useState<Image[]>([]);
+  const [query, setQuery] = useState<string>('');
+  const [page, setPage] = useState<number>(1);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isError, setIsError] = useState<boolean>(false);
+  const [totalPage, setTotalPages] = useState<number>(0);
+  const [selectedImage, setSelectedImage] = useState<Image | null>(null);
 
   useEffect(() => {
     if (!query) return;
@@ -37,7 +38,7 @@ const App = () => {
     getData();
   }, [query, page]);
 
-  const handleSetQuery = topic => {
+  const handleSetQuery = (topic: string) => {
     setQuery(topic);
     setImages([]);
     setPage(1);
@@ -47,7 +48,7 @@ const App = () => {
     setPage(prev => prev + 1);
   };
 
-  const handleIsModalOpen = image => {
+  const handleIsModalOpen = (image: Image) => {
     setSelectedImage(image);
   };
 

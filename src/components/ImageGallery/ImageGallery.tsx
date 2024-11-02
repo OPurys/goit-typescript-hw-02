@@ -1,7 +1,16 @@
 import css from './ImageGallery.module.css';
 import ImageCard from '../ImageCard/ImageCard';
+import { Image } from '../../types';
 
-const ImageGallery = ({ images, onImageClick }) => {
+interface ImageGalleryProps {
+  images: Image[];
+  onImageClick: (image: Image) => void;
+}
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({
+  images,
+  onImageClick,
+}) => {
   return (
     <ul className={css.list}>
       {images.map(image => (
@@ -10,12 +19,7 @@ const ImageGallery = ({ images, onImageClick }) => {
           className={css.item}
           onClick={() => onImageClick(image)}
         >
-          <ImageCard
-            alt={image.alt_description}
-            likes={image.likes}
-            src={image.urls.small}
-            author={image.user.name}
-          />
+          <ImageCard image={image} />
         </li>
       ))}
     </ul>

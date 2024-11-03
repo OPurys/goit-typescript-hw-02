@@ -8,6 +8,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import searchImages from './services/api';
 import { Toaster } from 'react-hot-toast';
 import { Image } from './types';
+import Container from './components/Container/Container';
 
 const App = () => {
   const [images, setImages] = useState<Image[]>([]);
@@ -58,21 +59,23 @@ const App = () => {
 
   return (
     <>
-      <SearchBar onSubmit={handleSetQuery} />
-      {images.length > 0 && (
-        <ImageGallery images={images} onImageClick={handleIsModalOpen} />
-      )}
-      {selectedImage && (
-        <ImageModal
-          isOpen={!!selectedImage}
-          onClose={handleOnModalClose}
-          image={selectedImage}
-        />
-      )}
-      {isError && <ErrorMessage />}
-      {isLoading && <Loader />}
-      {totalPage > page && <LoadMoreBtn onClick={handleChangePage} />}
-      <Toaster />
+      <Container>
+        <SearchBar onSubmit={handleSetQuery} />
+        {images.length > 0 && (
+          <ImageGallery images={images} onImageClick={handleIsModalOpen} />
+        )}
+        {selectedImage && (
+          <ImageModal
+            isOpen={!!selectedImage}
+            onClose={handleOnModalClose}
+            image={selectedImage}
+          />
+        )}
+        {isError && <ErrorMessage />}
+        {isLoading && <Loader />}
+        {totalPage > page && <LoadMoreBtn onClick={handleChangePage} />}
+        <Toaster />
+      </Container>
     </>
   );
 };

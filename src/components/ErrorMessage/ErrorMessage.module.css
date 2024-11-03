@@ -1,4 +1,14 @@
+.wrapper {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .image {
-  margin: 0 auto;
-  width: 60%;
+  width: 100%;
+
+  @media screen and (min-width: 1200px) {
+    width: 60%;
+  }
 }
